@@ -1,0 +1,4 @@
+{
+  "*.{json,jsonc,yaml,yml,js,mjs,cjs,ts,astro}": "pnpm format",
+  "*.{js,mjs,cjs,ts,astro}": "pnpm lint"
+}

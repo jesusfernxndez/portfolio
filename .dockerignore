@@ -1,0 +1,11 @@
+.git
+.devcontainer
+.pnpm-store
+node_modules
+Dockerfile*
+docker-compose*
+LICENSE
+README.md
+.gitignore
+.dockerignore
+.prettierrc
