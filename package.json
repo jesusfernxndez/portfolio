@@ -11,7 +11,7 @@
     "dev": "astro dev --host",
     "build": "astro build",
     "preview": "astro preview",
-    "test": "echo 'executing tests ...'"
+    "test": "echo 'Testing'"
   },
   "dependencies": {
     "astro": "5.5.2"
