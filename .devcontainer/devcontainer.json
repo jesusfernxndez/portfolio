@@ -1,26 +1,21 @@
 {
-  "name": "Alpine",
-  "dockerComposeFile": "docker-compose.yaml",
-  "service": "portfolio",
-  "workspaceFolder": "/workspaces/portfolio",
+  "name": "Astro",
+  "dockerComposeFile": "../docker-compose.yaml",
+  "service": "code",
+  "workspaceFolder": "/app",
   "remoteUser": "vscode",
-  "onCreateCommand": "sudo chown -R vscode:vscode $WORKDIR $PNPM_STORE_PATH",
-  "postCreateCommand": "corepack install && pnpm config set store-dir $PNPM_STORE_PATH",
-  "postStartCommand": "pnpm install --frozen-lockfile && pnpm prepare",
+  "onCreateCommand": "corepack install && pnpm config set store-dir /home/vscode/.pnpm-store",
+  "postCreateCommand": "pnpm install --frozen-lockfile",
+  "postStartCommand": "pnpm dev",
   "overrideCommand": true,
-  "features": {
-    "ghcr.io/cirolosapio/devcontainers-features/alpine-ohmyzsh:0": {}
-  },
-  "mounts": [
-    "source=${localEnv:USERPROFILE}${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached"
-  ],
   "customizations": {
     "vscode": {
       "extensions": [
         "astro-build.astro-vscode",
         "bradlc.vscode-tailwindcss",
         "esbenp.prettier-vscode",
-        "dbaeumer.vscode-eslint"
+        "dbaeumer.vscode-eslint",
+        "ms-azuretools.vscode-docker"
       ],
       "settings": {
         "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -36,5 +31,6 @@
         }
       }
     }
-  }
+  },
+  "features": {}
 }

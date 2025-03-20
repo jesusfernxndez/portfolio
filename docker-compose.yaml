@@ -1,9 +1,12 @@
 services:
-  portfolio:
-    image: node:22.14-alpine3.21
+  code:
+    build:
+      context: .devcontainer
+      dockerfile: Dockerfile
     working_dir: /app
     volumes:
       - .:/app
-    command: 'corepack enable pnpm && pnpm config && set store-dir /.pnpm-store && pnpm install && pnpm dev'
+      - ${HOME}/.ssh:/home/vscode/.ssh
+    command: sleep infinity
     ports:
       - '8080:4321'
